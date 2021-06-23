@@ -4,8 +4,8 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from scrapper import get_info
 import os
 
-PORT = int(os.environ.get('PORT', '8443'))
-TOKEN = '1726981118:AAHqAMtbZdZRLwTdo1DED0LDD6h8PUBvNNw'
+PORT = int(os.environ.get('PORT', 8443))
+TOKEN = os.environ["TOKEN"] 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
@@ -73,8 +73,8 @@ def main():
     # Start the Bot
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
-                          url_path=TOKEN)
-    updater.bot.setWebhook('https://protected-beach-15254.herokuapp.com/' + TOKEN)
+                          url_path=TOKEN,
+                          webhook_url= 'https://protected-beach-15254.herokuapp.com/' + TOKEN)
     # updater.start_polling()
     # Run the bot until you press Ctrl-C or the process receives SIGINT,
     # SIGTERM or SIGABRT. This should be used most of the time, since
