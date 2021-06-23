@@ -4,7 +4,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from scrapper import get_info
 import os
 
-# PORT = int(os.environ.get('PORT', 5000))
+PORT = int(os.environ.get('PORT', '8443'))
 TOKEN = '1726981118:AAHqAMtbZdZRLwTdo1DED0LDD6h8PUBvNNw'
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
