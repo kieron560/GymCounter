@@ -35,9 +35,9 @@ def gym(choice):
         "Location: " + result[0] + "\n" +
         "Updated at: " + result[1] + "\n" +
         "Current: " + result[2] + "\n" +
-        "Waiting: " + result[3] + "\n" +
-        "\n" + "Train hard bitches! " + "\n" +
-        "\n" + "Disclaimer: The accuracy of the values above are solely dependent on whether the staff updates their Google Docs. If the values are inaccurate upon arriving at the gym, then you know who ain't doing their job ARH"
+        "Waiting: " + result[3] + "\n" #+
+        #"\n" + "Train hard bitches! " + "\n" +
+        #"\n" + "Disclaimer: The accuracy of the values above are solely dependent on whether the staff updates their Google Docs. If the values are inaccurate upon arriving at the gym, then you know who ain't doing their job ARH"
     )
 
 def echo(update, context):
