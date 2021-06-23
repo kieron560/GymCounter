@@ -2,10 +2,13 @@ import telegram
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from scrapper import get_info
+#from test import get_info2
 import os
+# import time
 
 PORT = int(os.environ.get('PORT', 8443))
 TOKEN = os.environ["TOKEN"] 
+
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
@@ -16,18 +19,23 @@ logger = logging.getLogger(__name__)
 # context. Error handlers also receive the raised TelegramError object in error.
 def start(update, context):
     """Send a message when the command /start is issued."""
-    update.message.reply_text('Yall better not be doing just bench presses okay')
+    update.message.reply_text('This is a Gym Counter Bot that tells you the capacity at a particular location at a particular time!')
 
 
-def help(update, context):
-    """Send a message when the command /help is issued."""
-    update.message.reply_text('Enter /gym to get the timing for Elias')
+# def help(update, context):
+#     """Send a message when the command /help is issued."""
+#     update.message.reply_text('Enter /gym to get the timing for Elias')
 
 def elias (update, context):
-     update.message.reply_text(gym(1))
+    #start_time = time.time()
+
+    update.message.reply_text(gym(1))
+    #print("--- %s seconds ---" % (time.time() - start_time))
 
 def ehub (update, context):
-     update.message.reply_text(gym(2))
+    #start_time = time.time()
+    update.message.reply_text(gym(2))
+    #print("--- %s seconds ---" % (time.time() - start_time))
 
 def gym(choice):
     result = get_info(choice)
@@ -35,14 +43,13 @@ def gym(choice):
         "Location: " + result[0] + "\n" +
         "Updated at: " + result[1] + "\n" +
         "Current: " + result[2] + "\n" +
-        "Waiting: " + result[3] + "\n" #+
-        #"\n" + "Train hard bitches! " + "\n" +
-        #"\n" + "Disclaimer: The accuracy of the values above are solely dependent on whether the staff updates their Google Docs. If the values are inaccurate upon arriving at the gym, then you know who ain't doing their job ARH"
+        "Waiting: " + result[3] + "\n" 
     )
 
 def echo(update, context):
     """Echo the user message."""
     update.message.reply_text(update.message.text)
+    
 
 
 def error(update, context):
@@ -85,6 +92,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-
+    
 
 
