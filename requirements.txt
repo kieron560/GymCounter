@@ -5,3 +5,4 @@ pytz>=2018.6
 cachetools==4.2.2
 beautifulsoup4
 requests
+lxml
