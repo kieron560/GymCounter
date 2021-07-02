@@ -30,3 +30,4 @@ def get_info(choice):
 
     return location, time, percentage, waiting
 
+
