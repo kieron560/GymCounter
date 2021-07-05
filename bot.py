@@ -2,9 +2,7 @@ import telegram
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from scrapper import get_info
-#from test import get_info2
 import os
-# import time
 
 PORT = int(os.environ.get('PORT', 8443))
 TOKEN = os.environ["TOKEN"] 
