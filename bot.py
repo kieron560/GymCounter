@@ -31,6 +31,12 @@ def elias (update, context):
 def ehub (update, context):
     update.message.reply_text(gym(2))
 
+def skh (update, context):
+    update.message.reply_text(gym(3))
+
+def sengkang (update, context):
+    update.message.reply_text(gym(4))
+
 def gym(choice):
     result = get_info(choice)
     return (
@@ -63,6 +69,9 @@ def main():
     # dp.add_handler(CommandHandler("help", help))
     dp.add_handler(CommandHandler("elias", elias))
     dp.add_handler(CommandHandler("ehub", ehub))
+    dp.add_handler(CommandHandler("sengkang", sengkang))
+    dp.add_handler(CommandHandler("skh", skh))
+
 
     # on noncommand i.e message - echo the message on Telegram
     #dp.add_handler(MessageHandler(Filters.text, echo))
