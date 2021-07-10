@@ -4,11 +4,11 @@ import ast
 from bs4 import BeautifulSoup
 from bs4 import SoupStrainer
 
-LINK_ELIAS = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSW5uZLrFwbB16BFBvn7XaIwlsgudMwMmHlqSOs8I5etYAYuek6jgYEQM4cDvhRCDWp5a1ZGLwHLkkn/pubchart?oid=291919261&format=interactive"
-LINK_EHUB = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQKl9d-Qyig483T0HB8Y8C3yKngbXny3uXzjr6YhAPQmtHTGqAHo727SEOHbnOsKNj9c330vaCL3VOU/pubchart?oid=291919261&format=interactive"
+LINK_ELIAS =    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSW5uZLrFwbB16BFBvn7XaIwlsgudMwMmHlqSOs8I5etYAYuek6jgYEQM4cDvhRCDWp5a1ZGLwHLkkn/pubchart?oid=291919261&format=interactive"
+LINK_EHUB =     "https://docs.google.com/spreadsheets/d/e/2PACX-1vQKl9d-Qyig483T0HB8Y8C3yKngbXny3uXzjr6YhAPQmtHTGqAHo727SEOHbnOsKNj9c330vaCL3VOU/pubchart?oid=291919261&format=interactive"
 LINK_SENGKANG = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRWYdoCbymn2XQahgAIQw5sSGODoWwSaS-c91M-Wdifrmqw1_HvdBC9YryTWRA_Tph2pLkYHt8fDkcV/pubchart?oid=291919261&format=interactive"
-LINK_PUNGGOL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTi7jd0wZVGfyuQ7Gy5vIM3OBeiv4vpJTVD-1QJfrFUsFkF1BLxV1uQw4zzFOgwDhlvRqnVazIZjxav/pubchart?oid=664793316&format=image&fbclid=IwAR2nPXWOYXF44xFyhPpnE2YlWXlqCUEjatPgwcbVr6rCUKQYIf7BlGnhS40"
-LINK_SKH = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQeB_x1R71bnIRNJuGFfcHdY4neWPwGhBQsg8yVkI6vADaybcCheMwds3gLRA0JGBRL-MOCr90qqc-_/pubchart?oid=291919261&format=interactive"
+LINK_PUNGGOL =  "https://docs.google.com/spreadsheets/d/e/2PACX-1vTi7jd0wZVGfyuQ7Gy5vIM3OBeiv4vpJTVD-1QJfrFUsFkF1BLxV1uQw4zzFOgwDhlvRqnVazIZjxav/pubchart?oid=664793316&format=interactive"
+LINK_SKH =      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQeB_x1R71bnIRNJuGFfcHdY4neWPwGhBQsg8yVkI6vADaybcCheMwds3gLRA0JGBRL-MOCr90qqc-_/pubchart?oid=291919261&format=interactive"
 LINK = ""
 
 def get_info(choice):
@@ -18,6 +18,8 @@ def get_info(choice):
         LINK = LINK_EHUB
     elif choice == 3:
         LINK = LINK_SKH
+    elif choice == 4:
+        LINK = LINK_PUNGGOL
     else:
         LINK = LINK_SENGKANG
 

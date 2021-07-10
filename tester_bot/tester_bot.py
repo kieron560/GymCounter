@@ -60,6 +60,13 @@ def skh (update, context):
 def sengkang (update, context):
     start_time = time.time()
     
+    update.message.reply_text(gym(5))
+
+    logger.info("--- Time taken: %s seconds ---" % (time.time() - start_time))
+
+def punggol (update, context):
+    start_time = time.time()
+    
     update.message.reply_text(gym(4))
 
     logger.info("--- Time taken: %s seconds ---" % (time.time() - start_time))
@@ -98,6 +105,7 @@ def main():
     dp.add_handler(CommandHandler("ehub", ehub))
     dp.add_handler(CommandHandler("sengkang", sengkang))
     dp.add_handler(CommandHandler("skh", skh))
+    dp.add_handler(CommandHandler("punggol", punggol))
 
     # on noncommand i.e message - echo the message on Telegram
     #dp.add_handler(MessageHandler(Filters.text, echo))
