@@ -34,8 +34,11 @@ def ehub (update, context):
 def skh (update, context):
     update.message.reply_text(gym(3))
 
-def sengkang (update, context):
+def punggol (update, context):
     update.message.reply_text(gym(4))
+
+def sengkang (update, context):
+    update.message.reply_text(gym(5))
 
 def gym(choice):
     result = get_info(choice)
@@ -71,6 +74,7 @@ def main():
     dp.add_handler(CommandHandler("ehub", ehub))
     dp.add_handler(CommandHandler("sengkang", sengkang))
     dp.add_handler(CommandHandler("skh", skh))
+    dp.add_handler(CommandHandler("punggol", punggol))
 
 
     # on noncommand i.e message - echo the message on Telegram
