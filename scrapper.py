@@ -36,14 +36,17 @@ def get_info(choice):
     dictionary = ast.literal_eval(converted)
 
     location = dictionary['options']['title'][20:]
-    time = dictionary['options']['subtitle'][-7:]
+    time = dictionary['options']['subtitle'].replace(" ","")[-7:]
+
 
     # Sengkang's script tag code is different for some reason
     if LINK == LINK_SENGKANG:
         percentage = dictionary['dataTable']['rows'][0]['c'][1]['f']
         waiting = dictionary['dataTable']['rows'][1]['c'][1]['f'] 
+        time = time[1:] + "s"
     else:
         percentage = dictionary['dataTable']['rows'][0]['c'][0]['f']
         waiting = dictionary['dataTable']['rows'][0]['c'][1]['f']
 
     return location, time, percentage, waiting
+
