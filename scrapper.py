@@ -38,12 +38,14 @@ def get_info(choice):
     location = dictionary['options']['title'][20:]
     time = dictionary['options']['subtitle'].replace(" ","")[-7:]
 
+    # Changes 2300HRS to 2300hrs for consistency
+    if LINK == LINK_PUNGGOL:
+        time = time.lower()
 
     # Sengkang's script tag code is different for some reason
     if LINK == LINK_SENGKANG:
         percentage = dictionary['dataTable']['rows'][0]['c'][1]['f']
         waiting = dictionary['dataTable']['rows'][1]['c'][1]['f'] 
-        time = time[1:] + "s"
     else:
         percentage = dictionary['dataTable']['rows'][0]['c'][0]['f']
         waiting = dictionary['dataTable']['rows'][0]['c'][1]['f']
