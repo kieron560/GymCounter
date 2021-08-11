@@ -80,6 +80,16 @@ def gym(choice):
         "Waiting: " + result[3] + "\n" 
     )
 
+def feedback(update, context):
+    start_time = time.time()
+
+    update.message.reply_text(
+        "Click the Google Form link below to give us some feedback!\n\n" +
+        "https://forms.gle/uEdCgHZuZ5FRdytv5"
+    )
+
+    logger.info("--- Time taken: %s seconds ---" % (time.time() - start_time))
+
 def echo(update, context):
     """Echo the user message."""
     update.message.reply_text(update.message.text)
@@ -106,6 +116,7 @@ def main():
     dp.add_handler(CommandHandler("sengkang", sengkang))
     dp.add_handler(CommandHandler("skh", skh))
     dp.add_handler(CommandHandler("punggol", punggol))
+    dp.add_handler(CommandHandler("feedback", feedback))
 
     # on noncommand i.e message - echo the message on Telegram
     #dp.add_handler(MessageHandler(Filters.text, echo))
