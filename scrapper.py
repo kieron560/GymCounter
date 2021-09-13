@@ -31,7 +31,7 @@ def get_info(choice):
     trimmed = re.search("'chartJson': '(.*?)', 'serializedChartProperties'", str(info)).group(1)
 
     # Decoding the script tag, and changing the various words so that Python's ast.literal_eval() function can parse it
-    converted =  trimmed.replace("\\/", "/").encode().decode('unicode_escape').replace('\"','\'').replace("true", "True").replace("null","None")
+    converted =  trimmed.replace("\\/", "/").encode().decode('unicode_escape').replace('\"','\'').replace("true", "True").replace("false", "False").replace("null","None")
 
     dictionary = ast.literal_eval(converted)
 
