@@ -61,6 +61,10 @@ def error(update, context):
     """Log Errors caused by Updates."""
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
+def latest_update(update, context):
+    update.message.reply_text(
+        "Please NOTE that this telegram bot has been discontinued as effective of immediate due to easing of Covid Restrictions, and thus Anytime Fitness will not be recording the capacities until further notice! Thank you for your support! :)")
+
 def main():
     """Start the bot."""
     # Create the Updater and pass it your bot's token.
@@ -72,13 +76,13 @@ def main():
     dp = updater.dispatcher
 
     # on different commands - answer in Telegram
-    dp.add_handler(CommandHandler("start", start))
+    dp.add_handler(CommandHandler("start", latest_update))
     # dp.add_handler(CommandHandler("help", help))
-    dp.add_handler(CommandHandler("elias", elias))
-    dp.add_handler(CommandHandler("ehub", ehub))
-    dp.add_handler(CommandHandler("sengkang", sengkang))
-    dp.add_handler(CommandHandler("skh", skh))
-    dp.add_handler(CommandHandler("punggol", punggol))
+    dp.add_handler(CommandHandler("elias", latest_update))
+    dp.add_handler(CommandHandler("ehub", latest_update))
+    dp.add_handler(CommandHandler("sengkang", latest_update))
+    dp.add_handler(CommandHandler("skh", latest_update))
+    dp.add_handler(CommandHandler("punggol", latest_update))
     dp.add_handler(CommandHandler("feedback", feedback))
 
 
